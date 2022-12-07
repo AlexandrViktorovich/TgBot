@@ -3,21 +3,21 @@
 import cv2
 
 def camera():
-    # Включаем первую камеру
+    # open camera
     cap = cv2.VideoCapture(0)
 
-    # "Прогреваем" камеру, чтобы снимок не был тёмным
-    #for i in range(5):
-    #   cap.read()
-    [cap.read() for i in range(5)]
-    # Делаем снимок
+    for i in range(1):
+        cap.read()
+
     ret, frame = cap.read()
 
-    # Записываем в файл
+    # write to the file
     cv2.imwrite('cam.png', frame)
 
-    # Отключаем камеру
+    # Close connection camera
     cap.release()
 
 print('start')
+
+# Function
 camera()
